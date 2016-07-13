@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0">
+    <title>Anonymous chickchat</title>
+    <meta name="description" content="Anonymous chickchat"/>
+    <meta name="keywords" content="Anonymous chickchat"/>
+    <meta name="generator" content="badpaybad.info">
+
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+
+    <link href="css/app.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div>
+    <div id="login">
+        Anonymous Name:<br/> <input id="txtAnonyName" type="text" placeholder="anonymous name"/><br/>
+        Group title:<br/> <input id="txtGroupTitle" type="text" placeholder="group title"/><br/>
+        <!--Password to join:<br/><input id="txtGroupPwd" type="text" placeholder="group title" /> Leave empty for public chat-->
+           <input id="btnLogin" type="button" value="Start"
+               onclick="DoLogin()"/>
+
+        <div>
+            <i>Anonymnous chat rooms<br/>After created group chat, everyone can join. 
+            <br/>Then when you close browser, all chat belong to group chat will fly away.</i>
+        </div>
+    </div>
+    <div id="logedin">
+        <fieldset>
+            <legend>Groups (click to join chat)</legend>
+            <div id="groups"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Message(s) <span id="currentTitle"></span></legend>
+            <div id="messages">
+                <div id="content"></div>
+                <div id="pushMessage">
+                    <textarea id="txtMsgToPush" type="text" placeholder="type your message"></textarea><br />
+                    <input id="btnPushMessage" type="button" value="Send"
+                           onclick="PushMessage()" />
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+    <script src="scripts/ChickChatClient.js"></script>  
+</div>
+
+</body>
+</html>

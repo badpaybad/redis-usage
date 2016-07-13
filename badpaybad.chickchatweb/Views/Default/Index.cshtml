@@ -1,0 +1,65 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0">
+    <title>Anonymous chickchat</title>
+    <meta name="description" content="Anonymous chickchat" />
+    <meta name="keywords" content="Anonymous chickchat" />
+    <meta name="generator" content="badpaybad.info">
+
+    @*<script src="~/Scripts/jquery-1.6.4.min.js"></script>*@
+    <script src="~/scripts/jquery-2.2.2.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+  <script src="~/signalr/hubs"></script>
+</head>
+<body>
+<div>
+    <div id="login">
+        Anonymous Name:<br/> <input id="txtAnonyName" type="text" placeholder="anonymous name"/><br/>
+        Group title:<br/> <input id="txtGroupTitle" type="text" placeholder="group title"/><br/>
+        <!--Password to join:<br/><input id="txtGroupPwd" type="text" placeholder="group title"/> Leave empty for public chat-->
+        <input id="btnLogin" type="button" value="Start"
+               onclick="DoLogin()"/>
+
+        <div>
+            <i>
+                Anonymnous chat rooms<br/>After created group chat, everyone can join.
+                <br/>Then when you close browser, all chat belong to group chat will fly away.
+            </i>
+        </div>
+    </div>
+    <div id="logedin">
+        <fieldset>
+            <legend>Groups (click to join chat)</legend>
+            <div id="groups"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Message(s) <span id="currentTitle"></span></legend>
+            <div id="messages">
+                <div id="content"></div>
+                <div id="pushMessage">
+                    <textarea id="txtMsgToPush" type="text" placeholder="type your message"></textarea><br/>
+                    <input id="btnPushMessage" type="button" value="Send"
+                           onclick="PushMessage()"/>
+                </div>
+            </div>
+        </fieldset>
+
+    </div>
+</div>
+    <audio preload='true' id='audio'>
+        <source src="~/notifysound.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="~/scripts/App.js"></script>
+</body>
+</html>

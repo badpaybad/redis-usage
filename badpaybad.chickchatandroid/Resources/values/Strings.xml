@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Intro">Anonymnous chat rooms\r\nAfter created group chat, everyone can join. \r\nThen when you close browser, all chat belong to group chat will fly away.</string>
+    <string name="ApplicationName">badpaybad.chickchatandroid</string>
+</resources>
